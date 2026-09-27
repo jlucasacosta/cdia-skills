@@ -11,6 +11,7 @@ La idea de partida fue una sola frase: *"una web para que los clientes de mi pel
 | Paso | Comando | Qué dejó |
 |---|---|---|
 | Entrada | `/cdia:empezar` | Clasificó el pedido como **proyecto nuevo** y marcó el camino: preparar → brainstorming → plan → fases. |
+| 0 · Preparar | — | No se corrió: la prueba arrancó sin GitHub. El [CLAUDE.md](proyecto/CLAUDE.md) lo armó la fase 1 y el repositorio se creó al publicar. En un proyecto real, este paso va primero. |
 | 1 · Brainstorming | `/cdia:brainstorming` | [SPEC.md](proyecto/SPEC.md) con 19 requisitos que se pueden probar ("Cuando…, la app…") y [DECISIONES.md](proyecto/DECISIONES.md) con cada decisión y su porqué. Avisó en simple los dos límites de esta versión. |
 | 2 · Plan | `/cdia:plan` | [PLAN.md](proyecto/PLAN.md): 3 fases, cada una con los recorridos concretos de "cómo se ve terminada", y una sección "Ojo con" (doble clic, símbolos raros en el nombre, cambio de día a medianoche, datos dañados). |
 | 3 · Fase 1 | `/cdia:fase` | **HECHO** · reservar un turno de punta a punta, probado en el navegador, 10 pruebas automáticas, commit. |
@@ -54,6 +55,21 @@ En [`proyecto/`](proyecto/) están los documentos que dejó el método y el cód
 - [DECISIONES.md](proyecto/DECISIONES.md) · por qué se eligió cada cosa
 - [CLAUDE.md](proyecto/CLAUDE.md) · las reglas del proyecto
 - `index.html`, `estilos.css`, `app.js`, `pruebas.js` · la web y sus pruebas automáticas
+
+## Cómo seguiría este proyecto
+
+La web quedó publicada, pero un proyecto real sigue: la dueña pide cambios, algo falla, pasan semanas. Estos son los casos más comunes con la Peluquería Sol y qué se escribe en cada uno. Todos salen de lo que quedó anotado en el [SPEC.md](proyecto/SPEC.md) ("Fuera de alcance") y en el [PLAN.md](proyecto/PLAN.md) ("Pendientes").
+
+| Si pasa esto | Escribís | Qué hace |
+|---|---|---|
+| Volvés al proyecto un mes después | `/cdia:empezar` | Muestra el tablero: 3 de 3 fases, publicado, y los pendientes para decidir. |
+| La dueña quiere cerrar a las 19:00 | `/cdia:mejorar-prompt cambiá el horario de cierre a las 19:00` | Cambio chico: lo hace directo, sin SPEC ni plan, lo prueba y lo guarda. |
+| Quiere que cada cliente reserve desde su celular y le llegue a ella | `/cdia:brainstorming que las reservas desde el celular de cada cliente le lleguen a la dueña` | Función grande (era "Fuera de alcance"): necesita una base de datos, así que pasa por SPEC, plan y fases. |
+| Quiere un WhatsApp de confirmación | `/cdia:brainstorming ¿se puede mandar un WhatsApp de confirmación sin pagar?` | Prueba rápida: averigua las opciones y lo que cuestan antes de construir nada. |
+| Un cliente avisa que no puede reservar el sábado | `/cdia:arreglar un cliente dice que el sábado no le aparecen horarios` | Reproduce el problema, busca la causa, la arregla y muestra la prueba. |
+| Querés resolver un pendiente de la revisión | `/cdia:mejorar-prompt que el teléfono acepte solo números y como máximo 15` | Es uno de los 4 menores del PLAN.md: se hace directo y se tacha en Pendientes. |
+| Claude habló de "guardado local" y no lo entendiste | `/cdia:no-entendi qué es el guardado local` | Lo explica con una analogía y qué significa para la peluquería (por qué hoy sirve para una tablet en el mostrador). |
+| Querés que alguien vigile la web cada semana | `/cdia:mantener` | Control de salud sin tocar nada y te ofrece dejarlo programado. |
 
 ## Cuánto costó
 
