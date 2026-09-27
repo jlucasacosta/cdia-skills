@@ -6,20 +6,33 @@ Se instalan como plugin: cada mejora que suma la comunidad te llega sola.
 
 ## Instalar
 
-Pegale esto a Claude Code (app de escritorio, pestaña Code):
+En Claude Code (app de escritorio, pestaña Code), escribí estos dos comandos en la caja de texto, de a uno:
 
 ```
-Instalá el plugin cdia de la comunidad CDIA para todos mis proyectos:
-1. Agregá el marketplace con: claude plugin marketplace add jlucasacosta/cdia-skills
-2. Instalá el plugin con: claude plugin install cdia@cdia-skills --scope user
-3. En mi ~/.claude/settings.json agregá, sin borrar nada de lo que ya tiene,
-   el marketplace cdia-skills dentro de "extraKnownMarketplaces" con source
-   github, repo jlucasacosta/cdia-skills y "autoUpdate": true, para que las
-   mejoras me lleguen solas.
-Cuando termine, confirmame que quedó instalado y decime cómo se usa.
+/plugin marketplace add jlucasacosta/cdia-skills
 ```
 
-Después, abrí una sesión nueva para que aparezca.
+```
+/plugin install cdia@cdia-skills
+```
+
+Si te pregunta dónde instalarlo, elegí para tu usuario. Después, para que las mejoras te lleguen solas, pegale esto a Claude:
+
+```
+Acabo de instalar el plugin cdia de la comunidad CDIA. Quiero que
+las mejoras me lleguen solas.
+
+En mi archivo ~/.claude/settings.json, dentro de
+"extraKnownMarketplaces", buscá el marketplace cdia-skills y
+agregale "autoUpdate": true. Si no está, agregalo con source
+github y repo jlucasacosta/cdia-skills. No borres ni cambies nada
+más del archivo.
+
+Después confirmame que quedó bien y decime cómo uso la skill
+mejorar-prompt.
+```
+
+Abrí una sesión nueva para que aparezca. Desde la terminal también se puede: `claude plugin marketplace add jlucasacosta/cdia-skills` y `claude plugin install cdia@cdia-skills --scope user`.
 
 ## /cdia:mejorar-prompt
 
@@ -47,8 +60,7 @@ Es la versión automática: actúa en cada mensaje, sin escribir ningún comando
 Con el marketplace ya agregado:
 
 ```
-Instalá el plugin mejorar-prompt-auto de la comunidad CDIA:
-claude plugin install mejorar-prompt-auto@cdia-skills --scope user
+/plugin install mejorar-prompt-auto@cdia-skills
 ```
 
 Necesita Node.js instalado. Se apaga desde **+ → Plugins → Manage plugins**.
