@@ -1,5 +1,5 @@
 {
-  "description": "mejorar-prompt-auto · comunidad CDIA: mejora cada pedido internamente antes de ejecutarlo",
+  "description": "CDIA · modo automático de mejorar-prompt (apagado por defecto; se prende con /cdia:modo-automatico)",
   "hooks": {
     "UserPromptSubmit": [
       {
