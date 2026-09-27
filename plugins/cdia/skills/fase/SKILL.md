@@ -42,7 +42,7 @@ Una fase por sesión porque la ventana de contexto se llena y, llena, se trabaja
 
 La fase no está terminada hasta que tengas pruebas de que cumple su "cómo se ve terminada":
 
-- Si tiene pantalla, abrila en el panel Browser y hacé cada recorrido de la fase como lo haría un usuario, en ancho de computadora y de celular. Sacá capturas.
+- Si tiene pantalla, abrila en el panel Browser y hacé cada recorrido de la fase como lo haría un usuario, en ancho de computadora y de celular. Guardá las capturas en `docs/capturas/fase-N/` dentro del proyecto.
 - Si guarda datos, comprobá que el dato quedó guardado donde debía.
 - Si el proyecto tiene tests, corrélos y leé el resultado.
 - "Debería andar" no es evidencia. Si algo no se pudo comprobar, decilo como pendiente, no como hecho.

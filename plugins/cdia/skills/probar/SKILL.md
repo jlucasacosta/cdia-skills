@@ -37,7 +37,7 @@ Para cada recorrido:
 2. En ancho de computadora y de celular.
 3. Mirá también la consola del navegador: un error ahí cuenta aunque la pantalla se vea bien.
 4. Si guarda datos, comprobá que quedaron guardados y que otro usuario no los puede ver si no corresponde.
-5. Sacá una captura de lo importante.
+5. Sacá una captura de lo importante y guardala en `docs/capturas/pruebas/` dentro del proyecto.
 
 No arregles nada durante la prueba: primero la lista completa.
 
