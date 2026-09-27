@@ -31,7 +31,7 @@ Si la carpeta ya tiene git o archivos, contá lo que encontraste y preguntá ant
 ## 2. Dejar la base
 
 1. **Git**: inicializalo y creá un `.gitignore` que deje afuera `.env`, `.env.*` (menos `.env.example`), `node_modules`, carpetas de build y archivos del sistema.
-2. **GitHub**: creá el repositorio con `gh` y conectalo. Si `gh` no está instalado o no inició sesión, explicá cómo hacerlo (la persona escribe `gh auth login` en la terminal, Ctrl+`) y esperá.
+2. **GitHub**: comprobá que la identidad de git (`git config user.name` / `user.email`) sea la de la cuenta de GitHub que se va a usar (así después Vercel acepta las publicaciones), creá el repositorio con `gh` y conectalo. Si `gh` no está instalado o no inició sesión, explicá cómo hacerlo (la persona escribe `gh auth login` en la terminal, Ctrl+`) y esperá.
 3. **CLAUDE.md** corto (menos de 60 líneas) con:
    - qué es el proyecto y para quién (una o dos frases);
    - que el proyecto sigue el Método CDIA: `SPEC.md` dice qué se construye, `PLAN.md` en qué orden, `DECISIONES.md` por qué;

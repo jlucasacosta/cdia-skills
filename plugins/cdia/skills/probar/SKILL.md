@@ -39,6 +39,8 @@ Para cada recorrido:
 4. Si guarda datos, comprobá que quedaron guardados y que otro usuario no los puede ver si no corresponde.
 5. Sacá una captura de lo importante y guardala en `docs/capturas/pruebas/` dentro del proyecto.
 
+Si usás un script de pruebas en el navegador, corrélo en primer plano con un tiempo límite por paso y esperá el resultado antes de responder: nunca cierres tu respuesta mientras una prueba sigue corriendo. Guardá el script fuera de lo que se publica (por ejemplo en `docs/pruebas/`).
+
 No arregles nada durante la prueba: primero la lista completa.
 
 ## 4. Reportar

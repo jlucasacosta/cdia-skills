@@ -10,11 +10,13 @@ Preferí los conectores (MCP) que tenga la persona; si no, la CLI del servicio. 
 5. Repositorio privado por defecto si tiene lógica o datos del cliente.
 
 ## Vercel
+0. Antes de publicar, comprobá que el autor de los commits (`git config user.name` / `user.email`) sea la misma cuenta de GitHub conectada a Vercel: Vercel frena la publicación si el autor no pertenece a la cuenta. Si no coincide, configurá la identidad correcta en el repositorio (sin reescribir commits viejos) y volvé a publicar.
 1. Conectá el proyecto de Vercel al repositorio de GitHub, así cada push a `main` se publica solo y cada rama tiene su vista previa (preview).
 2. Revisá qué variables de entorno necesita el proyecto (buscá `process.env`, `import.meta.env`, `.env.example`). Cargalas en Vercel; las secretas, marcadas como **Sensitive**. Las públicas son solo las que empiezan con `NEXT_PUBLIC_`, `VITE_` o `PUBLIC_`.
 3. Una variable nueva o cambiada recién se aplica en la próxima publicación: después de tocarlas, volvé a publicar (redeploy).
-4. Publicá y leé los logs del deploy. Si falla, explicá en simple qué pasó y arreglalo.
-5. Plan Hobby (gratis) es para uso no comercial: para clientes corresponde el plan Pro. Avisalo si aplica.
+4. Si es una web estática, agregá un `.vercelignore` para que no se publiquen `SPEC.md`, `PLAN.md`, `DECISIONES.md`, `CLAUDE.md`, `docs/` ni archivos de prueba: son internos del proyecto.
+5. Publicá y leé los logs del deploy. Si falla, explicá en simple qué pasó y arreglalo.
+6. Plan Hobby (gratis) es para uso no comercial: para clientes corresponde el plan Pro. Avisalo si aplica.
 
 ## Supabase
 1. Preguntá si es un proyecto nuevo o uno existente, y si es de un cliente (en ese caso, solo lectura hasta tener OK para cada cambio).
