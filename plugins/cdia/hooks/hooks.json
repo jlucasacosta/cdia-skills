@@ -1,6 +1,18 @@
 {
-  "description": "CDIA · modo automático de mejorar-prompt (apagado por defecto; se prende con /cdia:modo-automatico)",
+  "description": "Plugin CDIA · estado del proyecto al abrir una sesión (solo si hay PLAN.md) y modo automático de mejorar-prompt (apagado por defecto)",
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/estado.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "hooks": [

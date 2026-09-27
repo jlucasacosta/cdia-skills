@@ -1,7 +1,7 @@
 {
   "name": "cdia",
   "displayName": "CDIA",
-  "description": "Todas las skills de la comunidad CDIA (cdia.pro) para construir con Claude Code, en español, en un solo plugin que se actualiza solo. Incluye /cdia:mejorar-prompt y /cdia:modo-automatico.",
+  "description": "Plugin de la comunidad CDIA (cdia.pro) para construir con Claude Code en español, sin saber programar: el Método CDIA completo (/cdia:empezar, brainstorming, plan, fase, probar, revisar, publicar, arreglar, mantener) más /cdia:mejorar-prompt. Se actualiza solo.",
   "author": {
     "name": "Comunidad CDIA",
     "url": "https://www.cdia.pro/recursos/skills/banco"
@@ -9,5 +9,13 @@
   "homepage": "https://github.com/jlucasacosta/cdia-skills",
   "repository": "https://github.com/jlucasacosta/cdia-skills",
   "license": "MIT",
-  "keywords": ["cdia", "skills", "prompt", "español", "comunidad"]
+  "keywords": [
+    "cdia",
+    "metodo",
+    "spec",
+    "plan",
+    "español",
+    "comunidad",
+    "prompt"
+  ]
 }

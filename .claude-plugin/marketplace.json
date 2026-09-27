@@ -12,7 +12,7 @@
       "name": "cdia",
       "displayName": "CDIA",
       "source": "./plugins/cdia",
-      "description": "Todas las skills de la comunidad CDIA en un solo plugin que se actualiza solo. Incluye /cdia:mejorar-prompt y /cdia:modo-automatico.",
+      "description": "Plugin de la comunidad CDIA (cdia.pro) para construir con Claude Code en español, sin saber programar: el Método CDIA completo (/cdia:empezar, brainstorming, plan, fase, probar, revisar, publicar, arreglar, mantener) más /cdia:mejorar-prompt. Se actualiza solo.",
       "category": "productivity",
       "homepage": "https://github.com/jlucasacosta/cdia-skills"
     }
