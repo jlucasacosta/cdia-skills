@@ -28,6 +28,22 @@ No hace falta acordarse de todos: con decir "quiero armar una app de turnos" o "
 
 Los archivos que deja en tu proyecto: `SPEC.md` (qué se construye), `PLAN.md` (en qué orden, con el estado), `DECISIONES.md` (por qué) y `CLAUDE.md` (las reglas).
 
+Usá el modo **Accept edits** (Ctrl+Shift+M) en todos los pasos: en modo Plan, Claude no puede guardar el SPEC.md ni el PLAN.md. El freno lo pone cada paso: `/cdia:brainstorming` y `/cdia:plan` no escriben código.
+
+## Qué escribir según lo que te pasa
+
+| Si te pasa esto | Escribís | Qué hace |
+|---|---|---|
+| Arrancás un proyecto de cero | `/cdia:empezar quiero una web para que los clientes de la Peluquería Sol reserven turnos` | Lo toma como proyecto nuevo y te lleva a `/cdia:preparar`, después al brainstorming. |
+| Volvés a un proyecto después de semanas | `/cdia:empezar` | Te muestra el tablero: qué está hecho, qué falta y el próximo paso. |
+| Tenés un proyecto hecho sin el método | `/cdia:empezar` | Te explica en simple qué hace el proyecto y te propone armar el SPEC.md a partir de lo que ya existe. |
+| El cliente pide algo nuevo en una web publicada | `/cdia:brainstorming que se pueda cancelar el turno desde el WhatsApp` | Diseño corto o SPEC según el tamaño, después plan y fases. |
+| Un cambio chico | `/cdia:mejorar-prompt cambiá el horario de cierre a las 19:00` | Lo hace directo, sin SPEC ni plan, y te muestra cómo lo pidió. |
+| Querés saber si algo se puede antes de encararlo | `/cdia:brainstorming ¿se puede mandar un WhatsApp automático sin pagar?` | Lo toma como prueba rápida: lo averigua de la forma más barata y te da una recomendación. |
+| Algo se rompió | `/cdia:arreglar toqué Reservar y apareció la pantalla en blanco` | Busca la causa antes de tocar nada, la arregla y te muestra la prueba. |
+| Claude dijo algo que no entendiste | `/cdia:no-entendi qué es RLS` | Te lo explica con una analogía y con lo que significa para tu proyecto. |
+| Una web publicada que querés vigilar | `/cdia:mantener` | Control de salud sin tocar nada, y te ofrece dejarlo programado cada semana. |
+
 ## Instalar
 
 En Claude Code (app de escritorio, pestaña Code), escribí estos dos comandos en la caja de texto, de a uno:
