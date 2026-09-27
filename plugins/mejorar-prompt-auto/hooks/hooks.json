@@ -1,0 +1,16 @@
+{
+  "description": "mejorar-prompt-auto · comunidad CDIA: mejora cada pedido internamente antes de ejecutarlo",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/inyectar.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

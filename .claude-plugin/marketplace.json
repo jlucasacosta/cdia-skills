@@ -1,0 +1,21 @@
+{
+  "name": "cdia-skills",
+  "owner": {
+    "name": "Comunidad CDIA",
+    "url": "https://www.cdia.pro/recursos/skills/banco"
+  },
+  "metadata": {
+    "description": "Skills y plugins de la comunidad CDIA para construir con Claude Code, en español.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mejorar-prompt-auto",
+      "source": "./plugins/mejorar-prompt-auto",
+      "description": "Comunidad CDIA: mejora cada pedido internamente antes de ejecutarlo, con las buenas prácticas de prompting de Anthropic.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "homepage": "https://github.com/jlucasacosta/cdia-skills"
+    }
+  ]
+}
