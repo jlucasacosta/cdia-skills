@@ -1,0 +1,191 @@
+/* Peluquería Sol · estilo cálido y luminoso, pensado primero para celular. */
+:root {
+  --fondo: #fffaf0;
+  --tarjeta: #ffffff;
+  --dorado: #f2b705;
+  --dorado-suave: #fdf0c4;
+  --borde: #e8d9a6;
+  --texto: #2a2118;
+  --texto-suave: #6b5a3e;
+  --error: #b00020;
+  --aviso: #8a4b00;
+  --radio: .75rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.05rem;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.45;
+  overflow-wrap: anywhere; /* nombres largos no empujan la página de costado */
+}
+
+header {
+  background: linear-gradient(180deg, #ffd24d, var(--dorado));
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 1.7rem; letter-spacing: .01em; }
+header h1::before { content: "☀ "; }
+
+main { max-width: 40rem; margin: 0 auto; padding: 1rem; }
+
+section > h2 { font-size: 1.35rem; margin: .5rem 0 1rem; }
+
+.paso {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.paso h2 { font-size: 1.1rem; margin: 0 0 .75rem; }
+
+/* Opciones (servicios, días, horarios): grilla que se adapta al ancho */
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: .5rem;
+}
+#lista-servicios { grid-template-columns: 1fr; }
+.opciones button {
+  min-height: 3rem;
+  padding: .6rem .5rem;
+  border: 1px solid var(--borde);
+  border-radius: .6rem;
+  background: #fff;
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+}
+#lista-servicios button { text-align: left; padding: .75rem 1rem; }
+.opciones button:hover { border-color: var(--dorado); }
+.opciones button.elegido {
+  background: var(--dorado);
+  border-color: var(--dorado);
+  font-weight: bold;
+}
+
+label { display: block; margin-top: .75rem; font-weight: 600; }
+input {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: .3rem;
+  padding: .6rem .75rem;
+  font: inherit;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid #b9a77a;
+  border-radius: .6rem;
+}
+input:focus-visible, button:focus-visible { outline: 3px solid #7a5b00; outline-offset: 2px; }
+
+button.principal {
+  display: block;
+  width: 100%;
+  min-height: 3.25rem;
+  margin-top: 1rem;
+  padding: .8rem 1.2rem;
+  border: 0;
+  border-radius: .6rem;
+  background: var(--dorado);
+  color: var(--texto);
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+button.principal:hover { background: #e0a800; }
+button:disabled { opacity: .5; cursor: default; }
+
+.aviso { color: var(--aviso); font-weight: bold; }
+.alerta {
+  margin: 0 0 .75rem;
+  padding: .75rem;
+  border-radius: .6rem;
+  background: #fff1e0;
+  border: 1px solid #f0c48a;
+}
+#aviso-guardado { margin: 1rem 0 0; }
+
+.error { color: var(--error); margin: .3rem 0 0; font-weight: 600; }
+input[aria-invalid="true"] { border: 2px solid var(--error); }
+
+button.enlace {
+  min-height: 2.75rem;
+  border: 0;
+  background: none;
+  padding: .5rem;
+  font: inherit;
+  color: var(--texto-suave);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.pie { margin-top: 1.5rem; text-align: center; }
+#form-pin .enlace { display: block; margin: 1rem auto 0; }
+
+/* Agenda */
+.navegar-dia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: .5rem;
+}
+.navegar-dia button {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--borde);
+  border-radius: .6rem;
+  background: var(--dorado-suave);
+  font: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.navegar-dia strong { text-align: center; }
+
+.agenda { list-style: none; padding: 0; margin: 1rem 0 0; }
+.agenda li {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--dorado);
+  border-radius: .6rem;
+  padding: .75rem;
+  margin-bottom: .6rem;
+}
+.agenda .acciones { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .5rem; }
+.agenda .acciones button {
+  min-height: 2.75rem;
+  padding: .4rem 1rem;
+  border: 1px solid #b9a77a;
+  border-radius: .6rem;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Confirmación */
+.resumen {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem;
+  margin: 0;
+}
+.resumen dt { font-size: .9rem; color: var(--texto-suave); }
+.resumen dd { margin: 0 0 .75rem; font-size: 1.15rem; font-weight: bold; }
+.resumen dd:last-child { margin-bottom: 0; }
+
+/* En pantallas anchas los botones principales no ocupan todo el ancho */
+@media (min-width: 40rem) {
+  button.principal { width: auto; min-width: 14rem; }
+  #lista-servicios { grid-template-columns: 1fr 1fr; }
+}

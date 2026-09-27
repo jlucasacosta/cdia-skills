@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peluquería Sol · Turnos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Peluquería Sol</h1>
+  </header>
+
+  <main>
+    <!-- Pantalla Reservar -->
+    <section id="pantalla-reservar">
+      <div class="paso">
+        <h2>1. Elegí el servicio</h2>
+        <div id="lista-servicios" class="opciones"></div>
+      </div>
+
+      <div class="paso" id="paso-dia" hidden>
+        <h2>2. Elegí el día</h2>
+        <div id="lista-dias" class="opciones"></div>
+      </div>
+
+      <div class="paso" id="paso-horario" hidden>
+        <h2>3. Elegí el horario</h2>
+        <p id="aviso-horario" class="aviso alerta" role="alert" hidden></p>
+        <div id="lista-horarios" class="opciones"></div>
+        <p id="sin-horarios" class="aviso" hidden>No hay horarios libres este día</p>
+      </div>
+
+      <form class="paso" id="paso-datos" hidden novalidate>
+        <h2>4. Tus datos</h2>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" maxlength="60" autocomplete="off" aria-describedby="error-nombre">
+        <p id="error-nombre" class="error" hidden></p>
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" autocomplete="off" aria-describedby="error-telefono">
+        <p id="error-telefono" class="error" hidden></p>
+        <p id="aviso-guardado" class="aviso alerta" role="alert" hidden></p>
+        <button type="submit" id="boton-confirmar" class="principal">Confirmar turno</button>
+      </form>
+
+      <p class="pie"><button type="button" id="enlace-duena" class="enlace">Soy la dueña</button></p>
+    </section>
+
+    <!-- Pantalla Ingreso de la dueña -->
+    <section id="pantalla-ingreso" hidden>
+      <h2>Ingreso de la dueña</h2>
+      <form id="form-pin" novalidate>
+        <label for="pin">PIN</label>
+        <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="off" aria-describedby="error-pin">
+        <p id="error-pin" class="error" hidden>PIN incorrecto</p>
+        <button type="submit" class="principal">Entrar</button>
+        <button type="button" id="boton-volver" class="enlace">Volver a reservas</button>
+      </form>
+    </section>
+
+    <!-- Pantalla Agenda -->
+    <section id="pantalla-agenda" hidden>
+      <h2>Agenda</h2>
+      <div class="navegar-dia">
+        <button type="button" id="dia-anterior" aria-label="Día anterior">←</button>
+        <strong id="agenda-dia"></strong>
+        <button type="button" id="dia-siguiente" aria-label="Día siguiente">→</button>
+      </div>
+      <label for="agenda-fecha">Ir a la fecha</label>
+      <input id="agenda-fecha" type="date">
+      <p id="aviso-agenda" class="aviso alerta" role="alert" hidden></p>
+      <ul id="lista-agenda" class="agenda"></ul>
+      <p id="sin-turnos" class="aviso" hidden>No hay turnos este día</p>
+      <button type="button" id="boton-salir" class="principal">Salir</button>
+    </section>
+
+    <!-- Pantalla Confirmación -->
+    <section id="pantalla-confirmacion" hidden>
+      <h2>¡Turno reservado!</h2>
+      <dl class="resumen">
+        <dt>Servicio</dt><dd id="conf-servicio"></dd>
+        <dt>Día</dt><dd id="conf-dia"></dd>
+        <dt>Hora</dt><dd id="conf-hora"></dd>
+        <dt>Nombre</dt><dd id="conf-nombre"></dd>
+      </dl>
+      <button type="button" id="boton-otro" class="principal">Reservar otro turno</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

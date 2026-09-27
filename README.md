@@ -24,6 +24,8 @@ El **Método CDIA** completo para construir webs y sistemas con **Claude Code**,
 
 No hace falta acordarse de todos: con decir "quiero armar una app de turnos" o "¿qué sigo?", Claude usa el paso que corresponde y te avisa con una línea `Método CDIA · Paso N`. Cada paso termina diciéndote el siguiente. Además, al abrir una sesión en un proyecto con `PLAN.md`, Claude ya sabe en qué fase estás.
 
+**Ejemplo real:** [Peluquería Sol, de la idea a la web publicada](docs/ejemplo-peluqueria-sol/), paso por paso, con capturas y los archivos que dejó cada paso.
+
 Los archivos que deja en tu proyecto: `SPEC.md` (qué se construye), `PLAN.md` (en qué orden, con el estado), `DECISIONES.md` (por qué) y `CLAUDE.md` (las reglas).
 
 ## Instalar
