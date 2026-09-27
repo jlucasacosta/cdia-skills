@@ -1,6 +1,6 @@
 ---
 name: mejorar-prompt
-description: Skill de la comunidad CDIA (cdia.pro). Mejora un pedido escrito en lenguaje común aplicando las buenas prácticas de prompting de Anthropic y después lo ejecuta en el mismo turno. Se usa cuando la persona escribe /mejorar-prompt seguido de lo que quiere hacer.
+description: Skill de la comunidad CDIA (cdia.pro). Mejora un pedido escrito en lenguaje común aplicando las buenas prácticas de prompting de Anthropic y después lo ejecuta en el mismo turno. Se usa cuando la persona escribe /cdia:mejorar-prompt seguido de lo que quiere hacer.
 argument-hint: "[tu pedido, como te salga]"
 disable-model-invocation: true
 license: MIT
@@ -11,7 +11,9 @@ metadata:
 
 # mejorar-prompt · skill de la comunidad CDIA
 
-La persona escribió un pedido tal como le salió. Tu trabajo es convertirlo en un buen prompt y después hacer lo que pide, en este mismo turno.
+La persona escribió un pedido tal como le salió. Tu trabajo es convertirlo en un buen prompt, mostrárselo y después hacer lo que pide, en este mismo turno. La persona instaló esta skill para aprender a pedir mejor, así que ver su prompt mejorado es la mitad de lo que espera recibir.
+
+Tu mensaje final, el que la persona lee cuando terminás, empieza siempre con el bloque "Prompt mejorado" (formato en la sección 5) y después cuenta lo que hiciste. El bloque va siempre, también cuando el pedido es chico o ya estaba claro: en ese caso el prompt mejorado sale parecido al original y "Qué agregué" lo dice. Mostralo una sola vez, en ese mensaje final.
 
 Pedido original:
 
@@ -49,16 +51,20 @@ Reglas de escritura, según la guía de Anthropic para los modelos actuales (det
 
 - Claro y directo, como para una persona brillante que recién llega y no conoce el proyecto.
 - Instrucciones en positivo: decí qué hacer, no qué evitar.
-- Tono normal. Sin MAYÚSCULAS, "DEBÉS", "CRÍTICO" ni signos de exclamación: con los modelos actuales empeoran el resultado.
+- Tono normal. Sin MAYÚSCULAS, "DEBÉS" ni "CRÍTICO": con los modelos actuales empeoran el resultado.
 - Sin "pensá paso a paso", "verificá dos veces" ni "revisá todo al final": los modelos actuales ya razonan y verifican solos. En su lugar, describí cómo se ve terminado.
 - Pedí la acción, no una sugerencia: "cambiá", "creá", "arreglá" en vez de "¿podrías sugerir…?".
 - Si la persona pegó un texto largo (un mail, un documento, datos), envolvelo en etiquetas como `<documento>` y ponelo antes de la instrucción.
 - Mantené el tamaño del pedido: no agregues funciones, pantallas ni mejoras que la persona no pidió.
 - Mismo idioma y mismo registro que la persona.
 
-## 4. Mostrarlo
+## 4. Ejecutarlo
 
-Mostrá el resultado así, breve:
+Hacé lo que dice el prompt mejorado, como si la persona lo hubiera escrito así desde el principio. Si en el camino aparece una decisión que el prompt no resuelve, preguntá antes de decidir por tu cuenta.
+
+## 5. Contarlo
+
+Tu mensaje final arranca con este bloque, en el idioma de la persona, y sigue con el resumen de lo que hiciste:
 
 ```
 Prompt mejorado · mejorar-prompt, skill de la comunidad CDIA (cdia.pro)
@@ -68,6 +74,4 @@ Prompt mejorado · mejorar-prompt, skill de la comunidad CDIA (cdia.pro)
 Qué agregué: <una línea con lo principal que sumaste>
 ```
 
-## 5. Ejecutarlo
-
-Inmediatamente después, hacé lo que dice el prompt mejorado, como si la persona lo hubiera escrito así desde el principio. Si en el camino aparece una decisión que el prompt no resuelve, preguntá antes de decidir por tu cuenta.
+Así la persona ve cómo se pide bien y la próxima vez lo puede escribir sola.

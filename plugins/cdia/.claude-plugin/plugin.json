@@ -1,0 +1,13 @@
+{
+  "name": "cdia",
+  "displayName": "CDIA · skills de la comunidad",
+  "description": "Skills de la comunidad CDIA (cdia.pro) para construir con Claude Code, en español. Incluye /cdia:mejorar-prompt: mejora tu pedido con las buenas prácticas de Anthropic y lo ejecuta.",
+  "author": {
+    "name": "Comunidad CDIA",
+    "url": "https://www.cdia.pro/recursos/skills/banco"
+  },
+  "homepage": "https://github.com/jlucasacosta/cdia-skills",
+  "repository": "https://github.com/jlucasacosta/cdia-skills",
+  "license": "MIT",
+  "keywords": ["cdia", "prompt", "español", "comunidad"]
+}

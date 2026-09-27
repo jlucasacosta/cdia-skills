@@ -10,10 +10,16 @@
   },
   "plugins": [
     {
+      "name": "cdia",
+      "source": "./plugins/cdia",
+      "description": "Skills de la comunidad CDIA en español. Incluye /cdia:mejorar-prompt: mejora tu pedido con las buenas prácticas de Anthropic y lo ejecuta.",
+      "category": "productivity",
+      "homepage": "https://github.com/jlucasacosta/cdia-skills"
+    },
+    {
       "name": "mejorar-prompt-auto",
       "source": "./plugins/mejorar-prompt-auto",
-      "description": "Comunidad CDIA: mejora cada pedido internamente antes de ejecutarlo, con las buenas prácticas de prompting de Anthropic.",
-      "version": "1.0.0",
+      "description": "Comunidad CDIA: mejora cada pedido internamente antes de ejecutarlo, sin escribir ningún comando.",
       "category": "productivity",
       "homepage": "https://github.com/jlucasacosta/cdia-skills"
     }
