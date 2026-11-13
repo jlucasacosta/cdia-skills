@@ -1,10 +1,10 @@
 ---
 name: fase
-description: Paso 3 del Método CDIA (comunidad CDIA, cdia.pro). Construye solo la próxima fase sin tildar del PLAN.md, la prueba con evidencia, la guarda en GitHub y frena. Se usa cuando hay un PLAN.md con fases pendientes y la persona quiere seguir construyendo ("seguí", "hacé la próxima fase", "continuemos"), o cuando escribe /cdia:fase.
+description: Método CDIA (comunidad CDIA, cdia.pro). Construye solo la próxima fase sin tildar del SPEC.md, comprueba que funciona, la guarda y frena. Se usa cuando hay un SPEC.md aprobado con fases pendientes y la persona quiere construir o seguir ("seguí", "hacé la próxima fase", "continuemos"), o cuando escribe /cdia:fase.
 argument-hint: "[opcional: número de fase]"
 ---
 
-# Implementar una fase · Método CDIA
+# Fase · Método CDIA
 
 Pedido de la persona (puede venir vacío):
 
@@ -12,51 +12,36 @@ Pedido de la persona (puede venir vacío):
 $ARGUMENTS
 </pedido>
 
-Empezá tu primer mensaje con la línea `Método CDIA · Paso 3: Fase <número> · <nombre>`.
+Empezá tu primer mensaje con la línea `Método CDIA · Fase <número> · <nombre> · modo recomendado: Auto o Accept edits`.
 
-Quien usa el Método CDIA suele no saber programar: contale en simple qué estás haciendo y por qué, sin jerga.
-
-## Por qué así
-
-Una fase por sesión porque la ventana de contexto se llena y, llena, se trabaja peor. Cada fase termina en un commit: un punto de guardado al que siempre se puede volver. Y ninguna fase se da por terminada sin evidencia de que funciona.
+El SPEC.md es el techo, no el piso: se construye lo que "Entra" dice para esta fase y nada más. La persona vende este sistema y lo mantiene sin saber programar, así que cada sección, pantalla, opción, archivo o validación que nadie pidió es algo más que va a tener que explicar y arreglar. La versión más simple que cumple el requisito es la correcta.
 
 ## 1. Tomar la fase
 
-- Leé `CLAUDE.md`, `SPEC.md`, `PLAN.md` y `DECISIONES.md`. Si no hay PLAN.md, decilo y proponé `/cdia:plan`.
-- La fase es la primera sin tildar, salvo que la persona pida otra. Si depende de una fase sin terminar, avisá.
-- Si el pedido de la persona es algo que no está en el plan, no lo mezcles con la fase: proponé anotarlo en "Pendientes" o, si es grande, pasarlo por `/cdia:brainstorming`.
-- Revisá `git status`. Si hay cambios sin guardar de antes, preguntá qué hacer con ellos antes de empezar.
-- Contá en tres líneas qué vas a construir y cómo se va a ver terminado.
-- Si la fase tiene pasos 🙋 (algo que tiene que hacer la persona), pedíselos primero, de a uno, con instrucciones exactas de dónde hacer clic o qué copiar. Las claves se pegan en el archivo `.env` o en el panel del servicio; en el chat no.
+- Leé `SPEC.md` y `CLAUDE.md`. Si no hay SPEC aprobado, proponé `/cdia:brainstorming`. (En proyectos de la versión anterior del método, las fases están en `PLAN.md`.)
+- La fase es la primera sin tildar, salvo que la persona pida otra.
+- Si el pedido trae algo que no está en "Entra", no lo mezcles con la fase: va a "Ideas para después" o, si la persona lo quiere ahora, pasa por `/cdia:brainstorming`.
+- Contá en corto qué vas a construir y cómo se va a ver terminado.
+- Los pasos 🙋 de la fase pedilos primero, de a uno, con instrucciones exactas de dónde hacer clic o qué copiar. Las claves se pegan en `.env` o en el panel del servicio, nunca en el chat.
 
 ## 2. Construir
 
-- Hacé solo lo que dice la fase, siguiendo las decisiones del plan y del SPEC. Si el plan y el SPEC chocan, manda el SPEC.
-- Si encontrás algo que habría que cambiar fuera de esta fase, anotalo en "Pendientes" del PLAN.md y seguí.
-- Si el plan tiene un error o falta una decisión chica, decidí vos lo más simple que cumpla el SPEC, seguí, y anotalo en "Decisiones tomadas en el camino" con el formato: `Fase N · <qué decidiste> — <por qué> — <qué cuesta si estaba mal>`.
-- Frená y preguntá solo ante: algo que borra datos o no se puede deshacer, algo de seguridad (claves, permisos, datos de clientes), algo que cuesta plata, o un plan tan roto que cualquier camino sería adivinar.
-- Si algo falla y no es obvio por qué, seguí el proceso de `/cdia:arreglar`: causa de fondo antes de tocar nada.
-- Tablas nuevas en Supabase: siempre con RLS, políticas que tengan sentido y los permisos (grants) que necesita la web.
+- Si falta una decisión chica, tomá la más simple que cumple el SPEC y anotala en una línea en "Cómo se hace".
+- Si te parece que falta algo que no está en "Entra" (otra sección, otro estado, un panel, una protección, pruebas automáticas, un README), anotalo en "Ideas para después" y seguí sin construirlo.
+- Usá las herramientas que dice "Cómo se hace" del SPEC, cada una con su MCP o su CLI, y no sumes otras. Para conectar con un servicio (GoHighLevel incluido), leé su documentación actual en vez de confiar en la memoria.
+- Si la fase crea tablas en Supabase, van con RLS, políticas con sentido y los permisos (grants) mínimos que necesita la web.
+- Una fase se construye y se comprueba en la compu. No crea repositorios ni proyectos en servicios y no publica: eso lo hace `/cdia:publicar`, cuando la persona lo escribe.
+- Frená y preguntá antes de borrar datos o hacer algo que no se deshace, tocar claves, permisos o datos de clientes, o gastar plata.
+- Si algo falla y la causa no es obvia, seguí el proceso de `/cdia:arreglar`.
 
-## 3. Comprobar con evidencia
+## 3. Comprobar
 
-La fase no está terminada hasta que tengas pruebas de que cumple su "cómo se ve terminada":
+Hacé el recorrido de "terminada cuando" como lo haría un usuario (si hay pantalla, en el panel Browser, en ancho de computadora y de celular) y mostrá la evidencia: la captura, el dato guardado o el comando con su resultado. Lo que no pudiste comprobar, decilo como pendiente y no como hecho.
 
-- Si tiene pantalla, abrila en el panel Browser y hacé cada recorrido de la fase como lo haría un usuario, en ancho de computadora y de celular. Guardá las capturas en `docs/capturas/fase-N/` dentro del proyecto.
-- Si guarda datos, comprobá que el dato quedó guardado donde debía.
-- Si el proyecto tiene tests, corrélos y leé el resultado.
-- "Debería andar" no es evidencia. Si algo no se pudo comprobar, decilo como pendiente, no como hecho.
+Antes de cerrar, repasá lo que cambiaste contra la fase: lo que no responde a un requisito de "Entra", sacalo, y lo que armaste solo para probar (un receptor falso, un script) no queda en el proyecto.
 
-## 4. Guardar y cerrar
+## 4. Guardar y frenar
 
-1. Tildá la fase en PLAN.md y actualizá el bloque **Estado** (fase actual, avance, fecha).
-2. Commit con un mensaje claro en español y push, si el proyecto tiene GitHub.
-3. Reportá con uno de estos estados:
-   - **HECHO** · con la evidencia (capturas, qué probaste).
-   - **HECHO CON DUDAS** · funciona, pero algo te preocupa; decí qué.
-   - **NECESITO ALGO** · falta una decisión o un dato de la persona.
-   - **BLOQUEADO** · no se puede seguir; explicá por qué y qué opciones hay.
-4. Si tomaste decisiones en el camino, listalas en "Decisiones que tomé", cada una con qué cuesta si estaba mal. Si hay pendientes nuevos, nombralos.
-5. Frená. Recomendá sesión nueva (Ctrl+N) para la próxima fase y cerrá con el próximo paso:
-   - quedan fases: `Siguiente: /cdia:fase`
-   - era la última: `Siguiente: /cdia:probar` (prueba completa) y después `/cdia:revisar`.
+1. Tildá la fase en SPEC.md y hacé commit (y push si el proyecto tiene GitHub).
+2. Contá en corto y en simple qué existe ahora, cómo comprobarlo y qué anotaste en "Ideas para después".
+3. Frená. Si quedan fases: `Siguiente: /cdia:fase`. Si era la última: `Siguiente: /cdia:probar`.

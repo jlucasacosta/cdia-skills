@@ -1,7 +1,7 @@
 {
   "name": "cdia",
   "displayName": "CDIA",
-  "description": "Plugin de la comunidad CDIA (cdia.pro) para construir con Claude Code en español, sin saber programar: el Método CDIA completo (/cdia:empezar, brainstorming, plan, fase, probar, revisar, publicar, arreglar, mantener) más /cdia:mejorar-prompt. Se actualiza solo.",
+  "description": "Plugin de la comunidad CDIA (cdia.pro) para construir con Claude Code en español, sin saber programar: el Método CDIA para armar sistemas chicos y venderlos, construyendo solo lo que se delimitó (/cdia:empezar, brainstorming, fase, probar, publicar, arreglar, mantener) más /cdia:mejorar-prompt. Se actualiza solo.",
   "author": {
     "name": "Comunidad CDIA",
     "url": "https://www.cdia.pro/recursos/skills/banco"

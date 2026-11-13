@@ -1,6 +1,6 @@
 # Procedimientos por servicio · Método CDIA
 
-Preferí los conectores (MCP) que tenga la persona; si no, la CLI del servicio. Los inicios de sesión (`gh auth login`, `vercel login`, `supabase login`, `railway login`) los hace la persona en la terminal (Ctrl+`): decile qué escribir y qué va a pasar.
+Cada servicio se maneja con su MCP o su CLI. Los inicios de sesión (`gh auth login`, `vercel login`, `supabase login`, `railway login`) los hace la persona en la terminal (Ctrl+`): decile qué escribir y qué va a pasar.
 
 ## GitHub
 1. Mostrá qué archivos cambiaron y resumilo en simple.
@@ -20,7 +20,7 @@ Preferí los conectores (MCP) que tenga la persona; si no, la CLI del servicio. 
 
 ## Supabase
 1. Preguntá si es un proyecto nuevo o uno existente, y si es de un cliente (en ese caso, solo lectura hasta tener OK para cada cambio).
-2. Cada tabla nueva se crea con una migración, con RLS activado, políticas que tengan sentido explicadas en simple (quién lee, quién escribe) y los permisos (grants) mínimos que necesita la web. Desde el 30 de octubre de 2026 las tablas nuevas no quedan disponibles sin grant explícito.
+2. Cada tabla nueva se crea con una migración, con RLS activado, políticas que tengan sentido explicadas en simple (quién lee, quién escribe) y los permisos (grants) mínimos que necesita la web. Sin grant explícito, una tabla nueva no queda disponible para la web.
 3. En el código: la clave publishable (`sb_publishable_…`) puede ir en el frontend; la secret (`sb_secret_…`) solo en el servidor y en variables de entorno.
 4. Corré los Advisors de seguridad (`get_advisors`) y resolvé los errores.
 5. Plan gratis: los proyectos se pausan tras una semana sin uso. Avisalo si el proyecto es de un cliente.
@@ -31,7 +31,7 @@ Preferí los conectores (MCP) que tenga la persona; si no, la CLI del servicio. 
 3. Publicá, generá un dominio si hace falta y mostrá los logs para confirmar que arrancó bien.
 4. Explicá en simple cuánto va a consumir y dónde se ve en el panel de Railway.
 
-## Dominio propio (opcional)
-1. Preguntá qué dominio y dónde está comprado.
-2. Agregalo al proyecto en Vercel y mostrá exactamente qué registros DNS hay que crear y dónde (en el panel del proveedor del dominio).
+## Dominio propio (Hostinger, solo si se pidió)
+1. Preguntá qué dominio. Los dominios se compran y se manejan en Hostinger, con su MCP; comprar uno cuesta plata, así que se confirma antes.
+2. Agregalo al proyecto en Vercel y creá en Hostinger los registros DNS que Vercel indique. Si el dominio está en otro proveedor, mostrá exactamente qué registros hay que crear y dónde.
 3. Comprobá que responde con HTTPS antes de darlo por hecho (puede tardar unos minutos).

@@ -12,7 +12,7 @@ Para apps hechas con Claude Code sobre Supabase, Vercel y Railway. Cada punto di
 ## Base de datos (Supabase)
 6. **RLS activado en todas las tablas del esquema `public`.** Sin RLS, cualquiera con la dirección del proyecto puede leer la tabla entera.
 7. **Las políticas tienen sentido.** Una política `USING (true)` en una tabla con datos de personas (nombres, mails, teléfonos, pedidos) deja todo abierto: es un problema crítico. Las políticas de datos personales se basan en quién es el usuario (`auth.uid()`).
-8. **Permisos de tabla (grants) explícitos y mínimos.** Desde el 30 de octubre de 2026, en todos los proyectos, las tablas nuevas no quedan disponibles para la web hasta que se les da permiso (`GRANT SELECT/INSERT … TO anon/authenticated`). Grant = si el rol entra a la tabla; RLS = qué filas ve. Hacen falta los dos, y al rol `anon` solo lo mínimo.
+8. **Permisos de tabla (grants) explícitos y mínimos.** Las tablas nuevas no quedan disponibles para la web hasta que se les da permiso (`GRANT SELECT/INSERT … TO anon/authenticated`). Grant = si el rol entra a la tabla; RLS = qué filas ve. Hacen falta los dos, y al rol `anon` solo lo mínimo.
 9. **Security Advisor de Supabase sin errores.** Corré los Advisors (con el conector de Supabase: `get_advisors`) y revisá cada aviso.
 
 ## Lo que entra por los formularios

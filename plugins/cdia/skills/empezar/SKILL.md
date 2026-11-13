@@ -1,6 +1,6 @@
 ---
 name: empezar
-description: Punto de entrada del Método CDIA (comunidad CDIA, cdia.pro). Mira la carpeta y el pedido, dice en qué paso está el proyecto y cuál es el próximo, y elige cuánto proceso hace falta según el tamaño del pedido. Se usa al arrancar o retomar un proyecto, cuando la persona pregunta "¿qué sigo?", "¿dónde quedamos?" o "¿por dónde empiezo?", o cuando escribe /cdia:empezar.
+description: Punto de entrada del Método CDIA (comunidad CDIA, cdia.pro). Mira la carpeta y el pedido, dice en qué paso está el proyecto y cuál es el próximo. Se usa al arrancar o retomar un proyecto, cuando la persona pregunta "¿qué sigo?", "¿dónde quedamos?" o "¿por dónde empiezo?", o cuando escribe /cdia:empezar.
 argument-hint: "[opcional: lo que querés hacer hoy]"
 ---
 
@@ -14,46 +14,40 @@ $ARGUMENTS
 
 Empezá tu primer mensaje con la línea `Método CDIA · Empezar`.
 
-Esta skill no construye nada: mira, explica y deriva al paso que corresponde. No cambies archivos.
+Esta skill mira, explica y deriva al paso que corresponde. No cambia archivos.
 
-## 1. Mirar el proyecto
+## 1. Mirar
 
-Revisá, sin modificar nada:
+Sin modificar nada: ¿la carpeta está vacía o tiene un proyecto? ¿Hay `SPEC.md`, con qué fases tildadas y qué dice "Publicado en"? ¿Qué muestran `git status` y los últimos commits?
 
-- ¿La carpeta está vacía o tiene un proyecto? ¿Hay git y repositorio en GitHub (`git remote -v`)?
-- ¿Existen `CLAUDE.md`, `SPEC.md`, `PLAN.md`, `DECISIONES.md`?
-- En PLAN.md: fases tildadas y sin tildar, bloque **Estado**, "Pendientes".
-- `git status` y los últimos commits: ¿hay cambios sin guardar? ¿cuándo fue el último trabajo?
-- ¿Está publicado? (bloque Estado del PLAN.md, `vercel.json`, `.vercel/`, `railway.json`, variables en `.env.example`).
-
-## 2. Mostrar el tablero
-
-Un resumen corto y claro:
+## 2. Tablero
 
 ```
 Proyecto: <nombre o "carpeta nueva">
-Paso actual: <0 Preparar · 1 Brainstorming · 2 Plan · 3 Fases (N de M) · 4 Probar · 5 Revisar · 6 Publicar · 7 Mantener>
+Paso actual: <Brainstorming · Fases (N de M) · Probar · Publicar · Mantener>
 Hecho: <lo terminado, en una línea>
 Falta: <lo que queda, en una línea>
-Atención: <cambios sin guardar, pendientes, algo roto — si hay>
+Atención: <cambios sin guardar, algo roto — si hay>
 ```
 
-Si el proyecto no usa el Método CDIA (tiene código pero no SPEC ni PLAN), explicá qué hace el proyecto en simple (qué es, qué partes tiene, dónde se publica) y proponé armar el SPEC a partir de lo que ya existe.
+Si hay código pero no SPEC.md, explicá en simple qué hace el proyecto y proponé escribir el SPEC con lo que ya existe, sin sumarle nada.
 
-## 3. Elegir el camino
+## 3. Próximo paso
 
-Si la persona trajo un pedido, clasificalo y decilo en una línea para que pueda corregirte:
+Si la persona trajo un pedido, decí en una línea cómo lo clasificás, para que pueda corregirte:
 
-| Tamaño | Ejemplos | Camino |
-|---|---|---|
-| **Cambio chico** | un texto, un color, un botón, arreglar algo puntual | Hacerlo directo con un buen pedido (`/cdia:mejorar-prompt`), probarlo y guardarlo. Si es un error: `/cdia:arreglar`. |
-| **Función nueva** | una sección, un formulario que guarda datos, una conexión con otro servicio | `/cdia:brainstorming` (diseño corto o SPEC según lo que toque) → `/cdia:plan` → `/cdia:fase` |
-| **Proyecto nuevo** | una web o app desde cero | `/cdia:preparar` → `/cdia:brainstorming` → `/cdia:plan` → `/cdia:fase` |
+| Pedido | Camino |
+|---|---|
+| Un sistema nuevo, o una sección o función nueva | `/cdia:brainstorming` → `/cdia:fase` |
+| Un cambio chico (un texto, un color, un botón) | `/cdia:brainstorming`, que lo resuelve en el momento sin SPEC |
+| Algo no funciona | `/cdia:arreglar` |
+| ¿Funciona? ¿Cómo está? | `/cdia:probar` |
+| Revisar algo ya publicado | `/cdia:mantener` |
 
-Si dudás entre dos, elegí el más completo.
+Si dudás entre dos tamaños, elegí el más chico: si aparece complejidad, se sube.
 
-Si no trajo pedido, el próximo paso sale del tablero: carpeta vacía → `/cdia:preparar`; sin SPEC → `/cdia:brainstorming`; SPEC sin PLAN → `/cdia:plan`; fases pendientes → `/cdia:fase`; fases terminadas sin probar → `/cdia:probar`; probado sin revisar → `/cdia:revisar`; revisado → `/cdia:publicar`; publicado → `/cdia:mantener`.
+Sin pedido, el próximo paso sale del tablero: sin SPEC → `/cdia:brainstorming`; fases pendientes → `/cdia:fase`; fases terminadas → `/cdia:probar`; probado → `/cdia:publicar`; publicado → `/cdia:mantener`.
 
-## 4. Cierre
+## Cierre
 
-Terminá con una sola línea: `Siguiente: /cdia:<paso>` y, si ayuda, una frase de por qué. Si la persona prefiere, podés arrancar ese paso en esta misma sesión.
+Una sola línea: `Siguiente: /cdia:<paso> <el pedido de la persona, si trajo uno>`, así el paso siguiente arranca sabiendo qué quiere aunque sea en una sesión nueva.
